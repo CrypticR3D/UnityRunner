@@ -93,11 +93,8 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Health"))
         {
             Destroy(collision.gameObject);
-            if (PermanentUI.perm.health <= 2)
-            {
-                PermanentUI.perm.health += 1;
-            }
-            
+            PermanentUI.perm.health += 1;
+
         }
     }
 
