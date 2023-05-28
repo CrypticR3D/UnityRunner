@@ -22,7 +22,7 @@ public class CharacterSwitcher : MonoBehaviour
     private void SwitchCharacter()
     {
         // Disable control for the currently active character
-        characters[activeCharacterIndex].GetComponent<MovementController>().enabled = false;
+        characters[activeCharacterIndex].GetComponent<PlayerController>().enabled = false;
 
         // Switch to the next character
         activeCharacterIndex++;
@@ -32,13 +32,13 @@ public class CharacterSwitcher : MonoBehaviour
         }
 
         // Enable control for the new active character
-        characters[activeCharacterIndex].GetComponent<MovementController>().enabled = true;
+        characters[activeCharacterIndex].GetComponent<PlayerController>().enabled = true;
     }
 
     private void SetActiveCharacter(int index)
     {
         // Enable control for the specified character
-        characters[index].GetComponent<MovementController>().enabled = true;
+        characters[index].GetComponent<PlayerController>().enabled = true;
 
         // Set all characters visible
         for (int i = 0; i < characters.Length; i++)
@@ -51,7 +51,7 @@ public class CharacterSwitcher : MonoBehaviour
         {
             if (i != index)
             {
-                characters[i].GetComponent<MovementController>().enabled = false;
+                characters[i].GetComponent<PlayerController>().enabled = false;
             }
         }
     }
