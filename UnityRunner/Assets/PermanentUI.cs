@@ -33,7 +33,15 @@ public class PermanentUI : MonoBehaviour
 
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(0);
+        }
+            
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (health == 3)
         {
             anim.speed = 1f;
@@ -56,5 +64,10 @@ public class PermanentUI : MonoBehaviour
     {
         //cherries = 0;
         //cherryText.text = cherries.ToString();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
